@@ -1,0 +1,45 @@
+<Copyright Alexandru Olteanu, grupa 322CA, alexandruolteanu2001@gmail.com>
+
+    In rezolvarea acestei teme am folosit in mare parte operatii si
+algoritmi de baza insa trebuie sa mentionez ca tema a fost la un nivel
+adecvat pentru cunostintele prezente de Assembly. Voi explica pe 
+larg procesul de rezolvare pentru fiecare task in parte fara sa 
+intru foarte mult in detalii (codul este deja comentat in detaliu).
+    Pentru primul task am folosit un simplu loop realizat cu
+ajutorul jump-urilor pentru a trece prin elementele corespunzatoare
+din cele doua siruri. Cu unul din indici am inceput de la 0 si 
+cu celalalt de la "lungimea sirului - 1" astfel respectand formula
+si incrementand, analog decrementand in functie de caz.
+    Pentru cel de al doilea task am considerat o abordare simpla
+metoda de a calcula prima data numarul de ani completi ce sunt de la 
+anul nasterii pana la anul trecut celui din prezent. Apoi, singurele
+conditii ce trebuiau tratate erau cele in care numarul de ani era negativ
+(caz in care se trunchia la 0), luna curenta era mai mare decat luna 
+datei de nastere (caz in care se adauga un an) sau luna curenta era egala
+cu cea a datei de nastere si ziua curenta era mai mare sau egala cu cea 
+de nastere, caz in care din nou se adauga 1 la varsta. Astfel am rezolvat
+pentru fiecare persoana in parte si am construit vectorul final
+    In cadrul task-ului 3 am evitat orice legatura cu o posibila matrice
+si m-am folosit de proprietatea ca pentru a parcurge o anumita coloana 
+cand cunoastem index-ul acesteia este de ajuns sa incrementam la fiecare pas 
+cu numarul de linii al matricei (in cazul nostru lungimea cheii). Astfel 
+am parcurs in maniera cronologica toate datele si am realizat encriptarea 
+dorita.
+    La task-ul 4 am evitat sa sterg efectiv ultimii 3 biti asa ca i-am 
+folosit mereu ca avand valoarea 0 in calcularea tag-ului. Acest aspect m-a
+ajutat sa nu complic problema prin shiftare si a usurat partea de construire 
+a celor 8 octeti consecutivi. Pentru implementarea efectiva am folosit 
+operatii precum "or" si "xor" pentru lucrul pe biti. Am tinut evidenta 
+cu atentie locului din memorie in care ne aflam la parcurgerea liniilor 
+cu tag-uri (Trebuia avansat cu 1 daca linia era goala sau cu 32 in caz contrar)
+In cazul de cache_hit am plasat valoarea corespunzatoare in registru dupa ce 
+am calculat offset-ul si adresa de memorie corespunzatoare a inceputului liniei
+din cache iar in cazul cache_miss am adaugat atat tag-ul cat si linia cache 
+corespunzatoare.Implementarea este mult mai detaliata, este explicat pe larg in 
+cadrul codului!
+
+
+PS: A fost o tema faina despre care pot spune ca m-a invatat mult mai bine Assembly,
+Mi-au placut problemele si cresterea progresiva a dificultatii! :) 
+
+
